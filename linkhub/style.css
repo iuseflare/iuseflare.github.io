@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    cursor: url(https://r2.guns.lol/8e89d8ed-29a6-484e-8d1f-a5317ce95ecc.png) 16 16, auto !important;
+    /* cursor: url(https://r2.fakecrime.bio/assets/cursors/mini.cur), auto !important; */
+}
+
+input,button,textarea,select {
+    font: inherit;
+}
+
+::selection {
+    color: #000;
+    background-color: #fff;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Parkinsans", sans-serif;
+    min-height: 100dvh;
+    color: #fff;
+
+    display: grid;
+    place-items: center;
+}
+
+.enter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+
+    transition: .5s ease;
+}
+
+.enter .enterText {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.bg {
+    position: fixed;
+    z-index: -2;
+    height: 100dvh;
+    width: 100dvw;
+    object-fit: cover;
+}
+
+.filter {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 650px;
+    margin-inline: 1rem;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(245, 245, 245, 0.043);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    padding: 2rem;
+    border-radius: 2rem;
+
+    opacity: 0;
+    transform: scale(0.7);
+    transition: .5s ease;
+}
+
+.profile, .links {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: .5s ease;
+}
+
+.profile {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile .user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile .username {
+    margin-right: .25rem;
+    background: url(https://assets.guns.lol/sparkle_white.gif);
+}
+
+.profile .badges {
+    transform: translateY(3px);
+    background: rgba(0, 0, 0, 0.242);
+    border: 2px solid rgba(245, 245, 245, 0.05);
+    padding: 7px 10px;
+    border-radius: 100vw;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.badge .tooltip {
+    bottom: calc(100% + 7px) !important;
+}
+
+.badge:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.profile .badges i {
+    font-size: 1.2rem;
+    
+}
+
+.profile .pfp {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+.profile .userText {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.glow {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5)
+}
+
+.links {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    font-size: 2.5rem;
+    color: #fff;
+    transition: 300ms ease;
+    position: relative;
+}
+
+.link:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+
+.tooltip {
+    opacity: 0;
+    bottom: 90%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.7);
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 3px 11px;
+    font-size: 0.9rem;
+    position: absolute;
+    z-index: 2;
+    transition: .2s ease;
+    pointer-events: none;
+}
+
+.player {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(245, 245, 245, 0.043);
+    backdrop-filter: blur(10px);
+    max-width: 700px;
+    border-radius: 2rem;
+    margin-inline: 1rem;
+    padding: 1rem;
+    
+    opacity: 0;
+    transform: scale(0.7);
+    transition: .5s ease;
+}
+
+.playerContent {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    opacity: 0;
+    transform: scale(0.7);
+    transition: .5s ease;
+}
+
+.songTitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.songInfo {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.songCover {
+    width: 75px;
+    height: 75px;
+    border-radius: 1rem; /* padding minus the border radius of parent = 1rem */
+}   
+
+.pausePlay {
+    font-size: 2.5rem;
+    line-height: 0.6;
+}
